@@ -1,0 +1,14 @@
+.buscador {
+    background: red;
+}
+
+.buscador h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.buscador input {
+    background: #000;
+    color: whitesmoke;
+    padding: 5px;
+}

@@ -1,0 +1,14 @@
+.content_form {
+    background: green;
+    margin: 40px;
+}
+
+.content_form form {
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.in {
+    background: blue;
+    height: 40px;
+}

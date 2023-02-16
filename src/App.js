@@ -1,34 +1,41 @@
 import './App.css';
-import Title from './components/Title.jsx'
 import Busqueda from './components/Busqueda.jsx'
 import Crear from './components/Crear.jsx'
 import Listado from './components/Listado.jsx'
 import Footer from './components/Footer.jsx'
+import { useState } from 'react';
 
 function App() {
+
+  const [listadoState, setListadoState] = useState([]);
+
+ 
+
   return (
-    <div className="App">
-     
-      <div>
+    <div className="layout">
+      
+      <div className='nav'>
         <nav>
           <h1>To Do List</h1>
         </nav>
       </div>
 
-      <div>
-
+      <div className='center'>
+        <div className='lateral'>
+          <Busqueda />
+          <Crear setListadoState={setListadoState} />
+        </div>
+  
+        <div>
+          <Listado listadoState={listadoState} setListadoState={setListadoState} />
+        </div>
+        
       </div>
-      <div>
-        <Title/>
+      
+      <div >
+        <Footer/>
       </div>
 
-      <div>
-        <Busqueda />
-        <Crear />
-        <Listado/>
-      </div>
-
-      <Footer/>
 
     </div>
   );
