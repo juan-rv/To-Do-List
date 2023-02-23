@@ -1,6 +1,9 @@
 .content_form {
-    background: green;
-    margin: 40px;
+  background: #53565a;
+  height: 350px;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-radius: 3px;
 }
 
 .content_form form {
@@ -8,7 +11,55 @@
     grid-template-rows: 50% 50%;
 }
 
+.content_form h2 {
+  color: #dbdcdb;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.input_form {
+  width: 80%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #dbdcdb;
+  color: #53565a;
+  border-radius: 10px;
+  border: solid 2px #86622c;
+  font-size: 20px;
+}
+
+.text_form {
+  background: #dbdcdb;
+  max-height: 80px;
+  min-height: 79px;
+  max-width: 300px;
+  min-width: 299px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: solid 2px #86622c;
+  color: #53565a;
+  font-size: 18px;
+}
+
 .in {
-    background: blue;
+    background: #ff9900;
     height: 40px;
+    width: 120px;
+    color: #dbdcdb;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.in:hover{
+    background: #da8910;
+    color: white;
+  
 }

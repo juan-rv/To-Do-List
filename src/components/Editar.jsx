@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
+import Swal from "sweetalert2";
+import "../styles/Editar.css";
 
-const Editar = ({nota, conseguirNotas, setEditar, setListadoState}) => {
-  
-  const titulo_componente = 'Editar nota'
+const Editar = ({ nota, conseguirNotas, setEditar, setListadoState }) => {
+  const titulo_componente = "Editar nota";
 
   const guardarEdicion = (e, id) => {
     e.preventDefault();
@@ -11,51 +12,51 @@ const Editar = ({nota, conseguirNotas, setEditar, setListadoState}) => {
 
     const notas_almacenadas = conseguirNotas();
 
-    const indice = notas_almacenadas.findIndex(nota => nota.id === id)
+    const indice = notas_almacenadas.findIndex((nota) => nota.id === id);
 
     let nota_actualizada = {
-        id,
-        titulo: target.titulo.value,
-        descripcion: target.descripcion.value
-    }
+      id,
+      titulo: target.titulo.value,
+      descripcion: target.descripcion.value,
+    };
 
     notas_almacenadas[indice] = nota_actualizada;
 
-    localStorage.setItem("notas", JSON.stringify(notas_almacenadas))
-  
+    localStorage.setItem("notas", JSON.stringify(notas_almacenadas));
+
     setListadoState(notas_almacenadas);
     setEditar(0);
-}
 
-  
-    return (
+    Swal.fire({
+      title: "Felicidades",
+      text: "Tarea editada con exito",
+      icon: "success",
+    });
+  };
+
+  return (
     <div>
-        <h3>{titulo_componente}</h3>
-        <form onSubmit={e => guardarEdicion(e, nota.id)}>
-            <input
-                type='text'
-                name='titulo'
-                className='titulo_editado'
-                defaultValue={nota.titulo}
-            />
+      <h3>{titulo_componente}</h3>
+      <hr />
 
-            <textarea
-            name='descripcion'
-            defaultValue={nota.descripcion}
-            className='descripcion_editada'
-            />
+      <form className="form_edit" onSubmit={(e) => guardarEdicion(e, nota.id)}>
+        <input
+          type="text"
+          name="titulo"
+          className="titulo_editado"
+          defaultValue={nota.titulo}
+        />
 
-            <input
-            type='submit'
-            className='editar'
-            value='actualizar'
-            />
-            
+        <textarea
+          name="descripcion"
+          defaultValue={nota.descripcion}
+          className="descripcion_editada"
+        />
 
-        </form>
-      
+        <input type="submit" className="editar" value="actualizar" />
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Editar
+export default Editar;

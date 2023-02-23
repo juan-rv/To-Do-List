@@ -1,13 +1,24 @@
-import React from 'react'
-import '../styles/Footer.css'
+import React from "react";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import "../styles/Footer.css";
 
 const Footer = () => {
   return (
-      <div className='content_footer'>
-          <h2>Aca va un footer con la informacion del desarrollador</h2>
-      
-    </div>
-  )
-}
+    <div className="content_footer">
+      <h2>Developed by RV</h2>
+      <a href="https://github.com/juan-rv" target="_blank" rel="noreferrer">
+        <AiFillGithub />
+      </a>
 
-export default Footer
+      <a
+        href="https://www.linkedin.com/in/juan-rv/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <AiFillLinkedin />
+      </a>
+    </div>
+  );
+};
+
+export default Footer;

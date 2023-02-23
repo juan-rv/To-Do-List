@@ -1,5 +1,19 @@
 .content_footer {
-    background: #000;
-    color: white;
+    background: #53565a;
+    color: #dbdcdb;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.content_footer h2 {
+    margin: 0;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.content_footer a {
+    color: #dbdcdb;
+    margin-right: 5px;
 }

@@ -3,7 +3,7 @@ import { guardarEnStorage } from '../helpers/guardarEnStorage'
 import Swal from 'sweetalert2'
 import '../styles/Crear.css'
 
-const Crear = ({setListadoState}) => {
+const Crear = ({ setListadoState }) => {
 
 
   const [notaState, setNotaState] = useState({
@@ -14,7 +14,7 @@ const Crear = ({setListadoState}) => {
   const [clean, setClean] = useState('');
   const [cleanDos, setCleanDos] = useState('');
 
-  const {titulo, descripcion} = notaState
+  const { titulo, descripcion } = notaState
 
 
   const conseguirDatos = e => {
@@ -56,7 +56,7 @@ const Crear = ({setListadoState}) => {
     },
       setClean(''),
       setCleanDos('')
-      
+
     );
 
     guardarEnStorage("notas", nota)
@@ -67,14 +67,14 @@ const Crear = ({setListadoState}) => {
       icon: "success"
     })
   }
-
-
- 
-
-
+  
   return (
     <div className='content_form'>
-      
+      <h2>
+        Crea tu tarea
+      </h2>
+
+
       <form onSubmit={conseguirDatos}>
         <input
           type='text'
@@ -83,17 +83,17 @@ const Crear = ({setListadoState}) => {
           name='titulo'
           onChange={e => setClean(e.target.value)}
           value={clean}
+          className = 'input_form'
 
         />
         <textarea
           placeholder='Descripcion'
           id='descripcion'
           name='descripcion'
-          onChange={e =>setCleanDos(e.target.value)}
+          onChange={e => setCleanDos(e.target.value)}
           value={cleanDos}
-        >
-        </textarea>
-       
+          className= 'text_form'
+        />
 
         <input className='in'
           type="submit"
@@ -101,11 +101,11 @@ const Crear = ({setListadoState}) => {
           value="guardar"
         />
 
-      
-        
+
+
       </form>
-      
-      
+
+
     </div>
   )
 }
